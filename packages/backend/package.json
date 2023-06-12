@@ -97,7 +97,7 @@
         "winston": "^3.3.3"
     },
     "scripts": {
-        "generate-api": "tsoa spec-and-routes",
+        "generate-api": "tsoa spec-and-routes && yarn run formatter ./src/generated --write",
         "dev": "LIGHTDASH_MODE=development HEADLESS=true ts-node-dev --rs --respawn -- src/index.ts",
         "debug": "ts-node-dev --rs --respawn --inspect-brk=0.0.0.0:9229 -- src/index.ts",
         "build": "tsc --build tsconfig.json",
