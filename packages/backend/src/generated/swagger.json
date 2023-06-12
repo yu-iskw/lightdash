@@ -954,8 +954,24 @@
                 "type": "object",
                 "description": "From T, pick a set of properties whose keys are in the union K"
             },
+            "ChartType": {
+                "enum": ["cartesian", "table", "big_number"],
+                "type": "string"
+            },
             "ChartSummary": {
-                "$ref": "#/components/schemas/Pick_SavedChart.uuid-or-name-or-description-or-spaceName-or-spaceUuid-or-projectUuid-or-organizationUuid-or-pinnedListUuid_"
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Pick_SavedChart.uuid-or-name-or-description-or-spaceName-or-spaceUuid-or-projectUuid-or-organizationUuid-or-pinnedListUuid_"
+                    },
+                    {
+                        "properties": {
+                            "chartType": {
+                                "$ref": "#/components/schemas/ChartType"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
             },
             "ApiChartSummaryListResponse": {
                 "properties": {
@@ -2650,7 +2666,7 @@
     },
     "info": {
         "title": "Lightdash API",
-        "version": "0.600.0",
+        "version": "0.603.0",
         "description": "Open API documentation for all public Lightdash API endpoints",
         "license": {
             "name": "MIT"
