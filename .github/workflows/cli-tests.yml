@@ -50,7 +50,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dbt: ['1.4', '1.5', '1.6', '1.7', '1.8']
+        dbt: ['1.4', '1.5', '1.6', '1.7', '1.8', '1.9']
     name: dbt ${{ matrix.dbt }}
     steps:
       - name: Checkout
@@ -117,5 +117,3 @@ jobs:
           CYPRESS_PGHOST: ${{secrets.PGHOST}}
           CYPRESS_PGPASSWORD: ${{secrets.PGPASSWORD}}
           CYPRESS_SEED_SCHEMA: jaffle-${{strategy.job-index}}
-
-
