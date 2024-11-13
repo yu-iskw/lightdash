@@ -1,5 +1,7 @@
 name: CLI tests
-on: [ deployment_status ]
+on:
+  pull_request:
+  deployment_status:
 
 env:
   NODE_ENV: 'development'
