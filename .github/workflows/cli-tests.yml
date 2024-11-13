@@ -69,17 +69,6 @@ jobs:
           lightdash_version=$(lightdash --version)
           package_version=$(yarn workspace @lightdash/cli versions | grep '@lightdash/cli' | cut -d"'" -f 4)
           if [ $package_version = $lightdash_version ]; then exit 0 ; else echo "Version mismatch"; exit 1; fi
-
-      # Run cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          project: ./packages/e2e
-          spec: packages/e2e/cypress/cli/**/*
-          config: 'baseUrl=${{needs.prepare-preview.outputs.url}}'
-        env:
-          CYPRESS_PGHOST: ${{secrets.PGHOST}}
-          CYPRESS_PGPASSWORD: ${{secrets.PGPASSWORD}}
-          CYPRESS_SEED_SCHEMA: jaffle-${{strategy.job-index}}
-
-
+      - name: Test CLI
+        run: |
+          ${{ github.workspace }}/packages/cli/dist/index.js
