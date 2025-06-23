@@ -381,6 +381,8 @@ export enum MetricType {
     SUM = 'sum',
     MIN = 'min',
     MAX = 'max',
+    VARIANCE = 'variance',
+    STDDEV = 'stddev',
     NUMBER = 'number',
     MEDIAN = 'median',
     STRING = 'string',
@@ -422,6 +424,11 @@ export const parseMetricType = (metricType: string): MetricType => {
             return MetricType.MIN;
         case 'max':
             return MetricType.MAX;
+        case 'variance':
+            return MetricType.VARIANCE;
+        case 'stddev':
+        case 'standard_deviation':
+            return MetricType.STDDEV;
         case 'number':
             return MetricType.NUMBER;
         case 'string':

@@ -5292,6 +5292,8 @@
                         "average",
                         "percentile",
                         "median",
+                        "variance",
+                        "stddev",
                         "count"
                     ]
                 },
@@ -5407,6 +5409,8 @@
                         "average",
                         "percentile",
                         "median",
+                        "variance",
+                        "stddev",
                         "count"
                     ]
                 },

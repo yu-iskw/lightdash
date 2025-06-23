@@ -450,7 +450,9 @@ export const renderFilterRuleSql = (
         case MetricType.COUNT_DISTINCT:
         case MetricType.SUM:
         case MetricType.MIN:
-        case MetricType.MAX: {
+        case MetricType.MAX:
+        case MetricType.VARIANCE:
+        case MetricType.STDDEV: {
             return renderNumberFilterSql(fieldSql, filterRule);
         }
         case DimensionType.DATE:

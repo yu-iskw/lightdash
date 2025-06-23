@@ -121,6 +121,8 @@ export const getAxisTypeFromField = (
             case MetricType.SUM:
             case MetricType.MIN:
             case MetricType.MAX:
+            case MetricType.VARIANCE:
+            case MetricType.STDDEV:
                 return 'value';
             case DimensionType.TIMESTAMP:
             case MetricType.TIMESTAMP:
@@ -465,6 +467,8 @@ const getMinAndMaxReferenceLines = (
                 case MetricType.PERCENTILE:
                 case MetricType.MIN:
                 case MetricType.MAX:
+                case MetricType.VARIANCE:
+                case MetricType.STDDEV:
                     return serie.markLine?.data.reduce<number[]>(
                         (acc, data) => {
                             try {

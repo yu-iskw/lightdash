@@ -491,6 +491,10 @@ export class PostgresClient<
                 }) WITHIN GROUP (ORDER BY ${sql})`;
             case MetricType.MEDIAN:
                 return `PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ${sql})`;
+            case MetricType.VARIANCE:
+                return `VARIANCE(${sql}::DOUBLE PRECISION)`;
+            case MetricType.STDDEV:
+                return `STDDEV(${sql}::DOUBLE PRECISION)`;
             default:
                 return super.getMetricSql(sql, metric);
         }
