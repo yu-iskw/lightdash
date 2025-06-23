@@ -73,6 +73,8 @@ export const getSortLabel = (
         case MetricType.SUM:
         case MetricType.MIN:
         case MetricType.MAX:
+        case MetricType.VARIANCE:
+        case MetricType.STDDEV:
         case MetricType.NUMBER:
         case TableCalculationType.NUMBER:
             return direction === SortDirection.ASC

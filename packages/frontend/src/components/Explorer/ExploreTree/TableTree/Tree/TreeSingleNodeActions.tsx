@@ -55,6 +55,8 @@ const getCustomMetricType = (type: DimensionType): MetricType[] => {
                 MetricType.PERCENTILE,
                 MetricType.MEDIAN,
                 MetricType.AVERAGE,
+                MetricType.VARIANCE,
+                MetricType.STDDEV,
                 MetricType.COUNT_DISTINCT,
                 MetricType.COUNT,
             ];

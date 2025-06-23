@@ -187,6 +187,8 @@
                         "sum",
                         "min",
                         "max",
+                        "variance",
+                        "stddev",
                         "number",
                         "string",
                         "date",
